@@ -1,24 +1,36 @@
 #IMPORTS
-import requests as req
-import sys
-from bs4 import BeautifulSoup as bs
 import re
 import os
+import sys
+import requests as req
+from bs4 import BeautifulSoup as bs
 from twilio.rest import Client
 
-#set the mods you need here
-MODS = ['Blessing of Rasputin', 'Light from Darkness', 'Reactive Pulse', 'Well of Striking', 'Bountiful Wells', 'Well of Ordnance', 'Elemental Shards', 'Enduring Wells']
+#set the mods you need here. Be sure to get the spelling just like it is in game.
+# for newbs just erase the ones you don't want and replace with what you want.
+# make sure whatever you add lines up correctly with what is already there
+# note the comma after every mod name except the last one.
+# also note the brackets their positioning is important do not change them.
+MODS = ['Blessing of Rasputin',
+        'Light from Darkness',
+        'Reactive Pulse',
+        'Well of Striking',
+        'Bountiful Wells',
+        'Well of Ordnance',
+        'Elemental Shards',
+        'Enduring Wells'
+        ]
 
 #Set these variables if you want the text alert. 
-#Go to twilio.com and make a trial account for free.
+#Go to twilio.com and make a trial account for free, create a phone number, then copy the info into the variables below.
 TEXT_ALERTS = False        #set this to True if you want alerts
-TWILIO_SID = None          #remember to make this a string
-TWILIO_TOKEN = None        #remember to make this a string
+TWILIO_SID = None          #remember to make this a string by putting quotes around it
+TWILIO_TOKEN = None        #remember to make this a string by putting quotes around it
 #numbers need to be a string of the form '+15553334444'
 TWILIO_NUMBER = None 
 CELL_NUMBER_FOR_ALERT_TEXT = None
 
-
+#DONT EDIT ANYTHING BELOW THIS LINE
 class DestinyModAlert:
     '''
     Checks to see if an item is in stock then sends an alert or purchases the item automatically.
