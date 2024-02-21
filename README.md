@@ -1,5 +1,7 @@
 # destiny2ModChecker
 
+Old project from way back. Probably doesn't even work anymore.
+
 Checks to see if the mods you need are in stock in destiny 2.
 Instructions for newbs on how to install everything needed at bottom.
 
